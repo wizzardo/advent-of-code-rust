@@ -1,3 +1,5 @@
+use common::get_last_digit_char_index;
+
 pub fn calculate1(input: &str) -> String {
     let input = input.trim_start();
 
@@ -76,23 +78,6 @@ pub fn calculate2(input: &str) -> String {
     }
 
     return result.to_string();
-}
-
-
-// fn get_first_digit_char_index(s: &str, mid: usize) -> usize {
-//     let mut i = mid;
-//     while i > 0 && s.chars().nth(i - 1).unwrap().is_digit(10) {
-//         i = i - 1;
-//     }
-//     return i;
-// }
-
-fn get_last_digit_char_index(s: &str, mid: usize) -> usize {
-    let mut i = mid;
-    while i < s.len() && s.chars().nth(i).unwrap().is_digit(10) {
-        i = i + 1;
-    }
-    return i;
 }
 
 #[cfg(test)]
