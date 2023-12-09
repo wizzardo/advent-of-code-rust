@@ -1,5 +1,6 @@
 use std::collections::{HashMap, HashSet};
 use nom::FindSubstring;
+use common::char_at;
 
 pub fn calculate1(input: &str) -> String {
     let mut path: &str = "";
@@ -29,7 +30,7 @@ pub fn calculate1(input: &str) -> String {
     let mut position = "AAA";
 
     while !position.eq("ZZZ") {
-        if path.chars().nth(steps % path.len()).unwrap() == 'L' {
+        if char_at(path, steps % path.len()).unwrap() == 'L' {
             position = nodes.get(position).unwrap()[0];
         } else {
             position = nodes.get(position).unwrap()[1];
@@ -78,7 +79,7 @@ pub fn calculate2(input: &str) -> String {
         let mut ends: HashSet<&str> = HashSet::new();
         loop {
             while !position.ends_with("Z") {
-                if path.chars().nth(k % path.len()).unwrap() == 'L' {
+                if char_at(path, k % path.len()).unwrap() == 'L' {
                     position = nodes.get(position).unwrap()[0];
                 } else {
                     position = nodes.get(position).unwrap()[1];
@@ -88,7 +89,7 @@ pub fn calculate2(input: &str) -> String {
 
             l.push(k as u32);
 
-            if path.chars().nth(k % path.len()).unwrap() == 'L' {
+            if char_at(path, k % path.len()).unwrap() == 'L' {
                 position = nodes.get(position).unwrap()[0];
             } else {
                 position = nodes.get(position).unwrap()[1];
