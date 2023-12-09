@@ -1,4 +1,4 @@
-use common::get_last_digit_char_index;
+use common::read_numbers;
 
 pub fn calculate1(input: &str) -> String {
     let input = input.trim_start();
@@ -30,23 +30,6 @@ pub fn calculate1(input: &str) -> String {
 
     return result.to_string();
 }
-
-fn read_numbers(line: &str, mut from: usize, to: usize, into: &mut [u64]) -> usize {
-    let mut count = 0;
-    while from < to {
-        if line.chars().nth(from).unwrap() <= ' ' {
-            from += 1;
-            continue;
-        }
-
-        let end = get_last_digit_char_index(line, from);
-        into[count] = (&line[from..end]).parse().unwrap();
-        count += 1;
-        from = end
-    }
-    return count;
-}
-
 
 pub fn calculate2(input: &str) -> String {
     let string = input.trim_start().replace(" ", "");
