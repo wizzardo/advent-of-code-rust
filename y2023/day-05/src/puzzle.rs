@@ -1,6 +1,6 @@
 use std::cmp::{max, min};
 use std::slice::Iter;
-use nom::FindSubstring;
+use common::find_substring;
 
 pub fn calculate1(input: &str) -> String {
     let mut numbers: [u64; 20] = [u64::MAX; 20];
@@ -14,7 +14,7 @@ pub fn calculate1(input: &str) -> String {
         // .inspect(|line| { dbg!(line); })
         .for_each(|line| {
             if count == 0 && line.starts_with("seeds:") {
-                let offset = line.find_substring(":").unwrap() + 1;
+                let offset = find_substring(line, ":").unwrap() + 1;
                 count = read_numbers(line, offset, line.len(), &mut numbers);
                 return;
             }
@@ -83,7 +83,7 @@ pub fn calculate2(input: &str) -> String {
         // .inspect(|line| { dbg!(line); })
         .for_each(|line| {
             if count == 0 && line.starts_with("seeds:") {
-                let offset = line.find_substring(":").unwrap() + 1;
+                let offset = find_substring(line,":").unwrap() + 1;
                 count = read_numbers(line, offset, line.len(), &mut mappings);
                 for i in (0..count).step_by(2) {
                     source.push(Range { from: mappings[i], length: mappings[i + 1] })

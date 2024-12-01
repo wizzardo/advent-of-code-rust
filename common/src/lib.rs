@@ -51,6 +51,15 @@ pub fn read_numbers<T>(line: &str, mut from: usize, to: usize, into: &mut [T]) -
     return count;
 }
 
+pub fn find_substring(s: &str, substr: &str) -> Option<usize> {
+    for i in 0..s.len() - substr.len() {
+        if s[i..].starts_with(substr) {
+            return Some(i);
+        }
+    }
+    None
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

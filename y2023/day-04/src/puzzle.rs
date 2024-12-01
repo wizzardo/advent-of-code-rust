@@ -1,4 +1,4 @@
-use nom::FindSubstring;
+use common::find_substring;
 
 pub fn calculate1(input: &str) -> String {
     let sum: u32 = input.lines()
@@ -6,8 +6,8 @@ pub fn calculate1(input: &str) -> String {
         .filter(|it| it.len() != 0)
         // .inspect(|line| { dbg!(line); })
         .map(|line| {
-            let position = line.find_substring(":").unwrap() + 1;
-            let start_of_my_numbers = line.find_substring("|").unwrap();
+            let position = find_substring(line, ":").unwrap() + 1;
+            let start_of_my_numbers = find_substring(line, "|").unwrap();
 
             const MAX_NUMBERS: usize = 10;
             let mut numbers: [u32; MAX_NUMBERS] = [0; MAX_NUMBERS];
@@ -66,8 +66,8 @@ pub fn calculate2(input: &str) -> String {
         .filter(|it| it.len() != 0)
         // .inspect(|line| { dbg!(line); })
         .for_each(|line| {
-            let position = line.find_substring(":").unwrap() + 1;
-            let start_of_my_numbers = line.find_substring("|").unwrap();
+            let position = find_substring(line,":").unwrap() + 1;
+            let start_of_my_numbers = find_substring(line,"|").unwrap();
             let card_number = get_card_number(line, position - 1);
             cards[card_number] += 1;
 

@@ -1,6 +1,5 @@
 use std::collections::{HashMap, HashSet};
-use nom::FindSubstring;
-use common::char_at;
+use common::{char_at, find_substring};
 
 pub fn calculate1(input: &str) -> String {
     let mut path: &str = "";
@@ -18,10 +17,10 @@ pub fn calculate1(input: &str) -> String {
 
             let node = &line[..3];
 
-            let left_start = line.find_substring("(").unwrap() + 1;
+            let left_start = find_substring(line,"(").unwrap() + 1;
             let left = &line[left_start..left_start + 3];
 
-            let right_start = line.find_substring(")").unwrap() - 3;
+            let right_start = find_substring(line,")").unwrap() - 3;
             let right = &line[right_start..right_start + 3];
             nodes.insert(node, [left, right]);
         });
@@ -59,10 +58,10 @@ pub fn calculate2(input: &str) -> String {
 
             let node = &line[..3];
 
-            let left_start = line.find_substring("(").unwrap() + 1;
+            let left_start = find_substring(line, "(").unwrap() + 1;
             let left = &line[left_start..left_start + 3];
 
-            let right_start = line.find_substring(")").unwrap() - 3;
+            let right_start = find_substring(line,")").unwrap() - 3;
             let right = &line[right_start..right_start + 3];
             nodes.insert(node, [left, right]);
             if node.ends_with("A") {

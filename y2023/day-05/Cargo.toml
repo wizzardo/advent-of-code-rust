@@ -7,13 +7,10 @@ edition = "2021"
 
 [dependencies]
 itertools = { workspace = true }
-nom = { workspace = true }
 tracing = { workspace = true }
 tracing-subscriber = { workspace = true }
-miette = { workspace = true }
-thiserror = { workspace = true }
 dhat = { workspace = true }
-rstest = { workspace = true }
+common = { path = "../../common" }
 
 [dev-dependencies]
 divan = { workspace = true }

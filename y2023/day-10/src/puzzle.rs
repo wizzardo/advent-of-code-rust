@@ -1,5 +1,4 @@
-use nom::FindSubstring;
-use common::char_at;
+use common::{char_at, find_substring};
 
 pub fn calculate1(input: &str) -> String {
     let pipes: Vec<&str> = input.lines()
@@ -14,7 +13,7 @@ pub fn calculate1(input: &str) -> String {
 
     let start = pipes.iter()
         .enumerate()
-        .map(|(i, line)| line.find_substring("S").map(|j| (i, j)))
+        .map(|(i, line)| find_substring(line, "S").map(|j| (i, j)))
         .filter(|x| x.is_some())
         .take(1)
         .map(|it| it.unwrap())
@@ -125,7 +124,7 @@ pub fn calculate2(input: &str) -> String {
 
     let start = pipes.iter()
         .enumerate()
-        .map(|(i, line)| line.find_substring("S").map(|j| (i, j)))
+        .map(|(i, line)| find_substring(line, "S").map(|j| (i, j)))
         .filter(|x| x.is_some())
         .take(1)
         .map(|it| it.unwrap())

@@ -1,4 +1,4 @@
-use nom::FindSubstring;
+use common::find_substring;
 
 pub fn calculate1(input: &str) -> String {
     let sum: u32 = input.lines()
@@ -45,8 +45,8 @@ pub fn calculate2(input: &str) -> String {
 }
 
 fn get_game_number(line: &str) -> u32 {
-    let start = line.find_substring(" ").unwrap() + 1;
-    let end = line.find_substring(":").unwrap();
+    let start = find_substring(line, " ").unwrap() + 1;
+    let end = find_substring(line, ":").unwrap();
     let int: u32 = (&line[start..end]).parse().unwrap();
     return int;
 }
@@ -60,7 +60,7 @@ fn get_max_cubes_number(line: &str, color: &str) -> u32 {
     let mut substr = line;
 
     loop {
-        let find = substr.find_substring(color);
+        let find = find_substring(substr, color);
         if let None = find {
             break;
         }
