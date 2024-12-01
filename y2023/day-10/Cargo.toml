@@ -1,5 +1,5 @@
 [package]
-name = "day-06"
+name = "day-10"
 version = "0.1.0"
 edition = "2021"
 
@@ -14,13 +14,13 @@ miette = { workspace = true }
 thiserror = { workspace = true }
 dhat = { workspace = true }
 rstest = { workspace = true }
-common = { path = "../common" }
+common = { path = "../../common" }
 
 [dev-dependencies]
 divan = { workspace = true }
 
 [[bench]]
-name = "day-06"
+name = "day-10"
 path = "benchmarks/benchmarks.rs"
 harness = false
 
