@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
 
-cargo flamegraph --profile flamegraph --root --package $1 -o flamegraph.svg
+cargo flamegraph --profile flamegraph --root --package $1 --image-width 800 -o flamegraph.svg
