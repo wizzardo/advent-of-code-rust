@@ -1,7 +1,7 @@
 [workspace]
 resolver = "2"
 
-members = ["y2023/day-*", "common", "y2019d*", "y2024/y2024d*"]
+members = ["y2023/day-*", "common", "y2019/y2019d*", "y2024/y2024d*"]
 
 [workspace.dependencies]
 glam = "0.24.2"
