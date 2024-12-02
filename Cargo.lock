@@ -1061,3 +1061,14 @@ dependencies = [
  "tracing",
  "tracing-subscriber",
 ]
+
+[[package]]
+name = "y2024d02"
+version = "0.1.0"
+dependencies = [
+ "common",
+ "dhat",
+ "divan",
+ "tracing",
+ "tracing-subscriber",
+]

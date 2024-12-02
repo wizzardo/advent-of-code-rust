@@ -23,6 +23,7 @@ create day:
     mkdir -p "y$(date +%Y)"
     cd "y$(date +%Y)" && cargo generate --path ../template --name "${formatted_day}"
     just get-input {{day}}
+    git add "${formatted_day}"
 
 #day like 1
 get-input day:

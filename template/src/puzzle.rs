@@ -7,6 +7,7 @@ pub fn calculate1(input: &str) -> String {
         // .inspect(|line| { dbg!(line); })
         .for_each(|line| {
         });
+    let result = "";
     format!("{result}")
 }
 
@@ -18,6 +19,7 @@ pub fn calculate2(input: &str) -> String {
         // .inspect(|line| { dbg!(line); })
         .for_each(|line| {
         });
+    let result = "";
     format!("{result}")
 }
 
