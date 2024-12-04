@@ -8,6 +8,10 @@ bench-all:
 bench day part:
     cargo bench --bench {{day}} part{{part}}
 
+#where day like y2024d01
+bench-day day:
+    cargo bench --bench {{day}}
+
 #where day like y2024d01 and part is 1 or 2
 flamegraph day part:
     cargo flamegraph --profile flamegraph --root --package {{day}} --bin part{{part}} --image-width 800 -o flamegraph.svg

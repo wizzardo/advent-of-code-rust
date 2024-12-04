@@ -300,6 +300,39 @@ dependencies = [
 ]
 
 [[package]]
+name = "ebc-y2024d03"
+version = "0.1.0"
+dependencies = [
+ "common",
+ "dhat",
+ "divan",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
+name = "ebc-y2024d04"
+version = "0.1.0"
+dependencies = [
+ "common",
+ "dhat",
+ "divan",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
+name = "ebc-y2024d05"
+version = "0.1.0"
+dependencies = [
+ "common",
+ "dhat",
+ "divan",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "either"
 version = "1.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1141,6 +1174,17 @@ dependencies = [
  "dhat",
  "divan",
  "regex",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
+name = "y2024d04"
+version = "0.1.0"
+dependencies = [
+ "common",
+ "dhat",
+ "divan",
  "tracing",
  "tracing-subscriber",
 ]
