@@ -1,4 +1,5 @@
 use std::str::FromStr;
+use std::time::{SystemTime, UNIX_EPOCH};
 
 pub fn get_first_digit_char_index(s: &str, mid: usize) -> usize {
     let mut i = mid;
@@ -58,6 +59,14 @@ pub fn find_substring(s: &str, substr: &str) -> Option<usize> {
         }
     }
     None
+}
+
+#[allow(unused)]
+fn current_time_ms() -> u64 {
+    let start = SystemTime::now();
+    let since_the_epoch = start.duration_since(UNIX_EPOCH).unwrap();
+    let in_ms = since_the_epoch.as_secs() * 1000 + since_the_epoch.subsec_nanos() as u64 / 1_000_000;
+    in_ms
 }
 
 #[cfg(test)]
