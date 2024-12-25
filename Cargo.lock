@@ -1322,3 +1322,36 @@ dependencies = [
  "tracing",
  "tracing-subscriber",
 ]
+
+[[package]]
+name = "y2024d17"
+version = "0.1.0"
+dependencies = [
+ "common",
+ "dhat",
+ "divan",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
+name = "y2024d18"
+version = "0.1.0"
+dependencies = [
+ "common",
+ "dhat",
+ "divan",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
+name = "y2024d19"
+version = "0.1.0"
+dependencies = [
+ "common",
+ "dhat",
+ "divan",
+ "tracing",
+ "tracing-subscriber",
+]
