@@ -1,7 +1,16 @@
 [workspace]
 resolver = "2"
 
-members = ["y2023/day-*", "common", "y2019/y2019d*", "y2024/y2024d*", "ebc-y2024/ebc-y2024d*"]
+members = [
+    "y2023/day-*",
+    "common",
+    "y2019/y2019d*",
+    "y2021/y2021d*",
+    "y2022/y2022d*",
+    "y2024/y2024d*",
+    "y2025/y2025d*",
+    "ebc-y2024/ebc-y2024d*",
+]
 
 [workspace.dependencies]
 itertools = "0.13.0"
